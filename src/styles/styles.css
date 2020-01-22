@@ -1,0 +1,25 @@
+@import "~normalize.css";
+@import './montserrat.css';
+
+body {
+  padding: 20px;
+  border: 2px solid green;  
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.logo {
+  background-image: url('../assets/pg-logo.png');
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.code {
+  color: pink;
+  background-color: grey;
+}
