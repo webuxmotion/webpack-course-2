@@ -26,6 +26,8 @@ const optimization = () => {
     return config
 }
 
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -35,10 +37,10 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js'
+        filename: filename('js')
     },
     resolve: {
-        extensions: ['.js', '.json', '.png', '.xml', '.csv', '.css'],
+        extensions: ['.js', '.json', '.png', '.xml', '.csv', '.css', '.less'],
         alias: {
             '@models': path.resolve(__dirname, 'src/models'),
             '@': path.resolve(__dirname, 'src')
@@ -46,7 +48,7 @@ module.exports = {
     },
     devServer: {
         port: 4200,
-        hot: isDev
+        // hot: isDev
     },
     optimization: optimization(),
     plugins: [
@@ -69,7 +71,7 @@ module.exports = {
             }
         ]),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
+            filename: filename('css')
         })
     ],
     module: {
@@ -85,6 +87,20 @@ module.exports = {
                         },
                     },
                     'css-loader'
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: isDev,
+                            reloadAll: true
+                        },
+                    },
+                    'css-loader',
+                    'less-loader'
                 ]
             },
             {

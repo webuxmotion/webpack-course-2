@@ -1,10 +1,11 @@
 import * as $ from 'jquery'
 import Post from '@models/Post'
-import './styles/styles'
 import json from './assets/test'
 import PGLogo from './assets/pg-logo'
 import xml from './assets/data'
 import csv from './assets/data'
+import './styles/styles'
+import './styles/less'
 
 const post = new Post('Webpack Post Title', PGLogo)
 console.log(post.toString())
