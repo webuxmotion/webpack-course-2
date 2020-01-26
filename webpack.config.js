@@ -86,6 +86,7 @@ module.exports = {
         port: 4200,
         // hot: isDev
     },
+    devtool: isDev ? 'source-map' : '',
     optimization: optimization(),
     plugins: [
         new HTMLWebpackPlugin({
