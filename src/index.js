@@ -1,6 +1,7 @@
 import * as $ from 'jquery'
 import Post from '@models/Post'
 import json from './assets/test'
+import './babel'
 import PGLogo from './assets/pg-logo'
 import xml from './assets/data'
 import csv from './assets/data'
