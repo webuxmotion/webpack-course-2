@@ -6,6 +6,7 @@ import xml from './assets/data'
 import csv from './assets/data'
 import './styles/styles'
 import './styles/less'
+import './styles/sass.scss'
 
 const post = new Post('Webpack Post Title', PGLogo)
 console.log(post.toString())

@@ -1,0 +1,13 @@
+$border: 5px solid green;
+
+.card {
+    padding: 0.5rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    border: $border;
+
+    h2 {
+        text-align: center;
+        color: purple;
+    }
+}
